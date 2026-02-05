@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:compile": "tsc --target ES2022 --module ES2022 --moduleResolution node --outDir dist-tests src/lib/workflowUtils.ts src/lib/nodeLibrary.ts src/types/index.ts",
+    "test": "npm run test:compile && node --test tests/workflowUtils.test.js tests/nodeLibrary.test.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
